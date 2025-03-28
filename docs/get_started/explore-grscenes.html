@@ -372,6 +372,24 @@ GRScenes-100/home_scenes.zip --(unzip)--&gt; home_scenes
 </ol>
 <p>The dataset contains raw models and raw scenes. We recommend using <a class="reference external" href="https://openusd.org/release/intro.html">OpenUSD python SDK</a> to apply physics APIs such as the rigid body and collider to the models. We also provide an example <a class="reference external" href="https://github.com/OpenRobotLab/GRUtopia/blob/main/toolkits/grscenes_scripts/preprocess.py">preprocess</a> script to learn the detailed workflow of the physics property bindings. Besides, here are some other <a class="reference external" href="https://github.com/OpenRobotLab/GRUtopia/tree/main/toolkits/grscenes_scripts">tool scripts</a> for GRScenes-100.</p>
 </section>
+<section id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p>Following errors may occur when loading some scenes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+<span class="p">[</span><span class="ne">Warning</span><span class="p">]</span> <span class="p">[</span><span class="n">rtx</span><span class="o">.</span><span class="n">neuraylib</span><span class="o">.</span><span class="n">plugin</span><span class="p">]</span> <span class="n">Loading</span> <span class="n">MdlModule</span> <span class="n">to</span> <span class="n">DB</span> <span class="p">(</span><span class="n">OmniUsdMdl</span><span class="p">)</span> <span class="n">failed</span><span class="p">:</span> <span class="p">::</span><span class="n">Materials</span><span class="p">::</span><span class="n">DayMaterial</span>
+<span class="p">[</span><span class="ne">Warning</span><span class="p">]</span> <span class="p">[</span><span class="n">rtx</span><span class="o">.</span><span class="n">neuraylib</span><span class="o">.</span><span class="n">plugin</span><span class="p">]</span> <span class="n">Loading</span> <span class="n">transaction</span> <span class="n">committed</span> <span class="p">(</span><span class="n">this</span> <span class="n">thread</span><span class="p">)</span><span class="o">.</span> <span class="n">MdlModule</span> <span class="ow">is</span> <span class="n">NOT</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">DB</span> <span class="p">(</span><span class="n">OmniUsdMdl</span><span class="p">):</span> <span class="p">::</span><span class="n">Materials</span><span class="p">::</span><span class="n">DayMaterial</span>
+<span class="p">[</span><span class="n">Error</span><span class="p">]</span> <span class="p">[</span><span class="n">omni</span><span class="o">.</span><span class="n">usd</span><span class="p">]</span> <span class="n">USD_MDL</span><span class="p">:</span> <span class="ow">in</span> <span class="n">LoadModule</span> <span class="n">at</span> <span class="n">line</span> <span class="mi">247</span> <span class="n">of</span> <span class="o">../../</span><span class="n">source</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">usdMdl</span><span class="o">/</span><span class="n">neuray</span><span class="o">.</span><span class="n">cpp</span> <span class="o">--</span> <span class="s1">&#39;rtx::neuraylib::MdlModuleId&#39;</span> <span class="k">for</span> <span class="s1">&#39;/data/GRScenes-100/home_scenes/scenes/MV7J6NIKTKJZ2AABAAAAADA8_usd/Materials/DayMaterial.mdl&#39;</span> <span class="ow">is</span> <span class="n">Invalid</span>
+<span class="p">[</span><span class="n">Error</span><span class="p">]</span> <span class="p">[</span><span class="n">omni</span><span class="o">.</span><span class="n">usd</span><span class="p">]</span> <span class="n">USD_MDL</span><span class="p">:</span> <span class="ow">in</span> <span class="n">GetSdrFromDiscoveryResult</span> <span class="n">at</span> <span class="n">line</span> <span class="mi">178</span> <span class="n">of</span> <span class="o">../../</span><span class="n">source</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">usdMdl</span><span class="o">/</span><span class="n">moduleRegistry</span><span class="o">.</span><span class="n">cpp</span> <span class="o">--</span> <span class="n">Module</span><span class="p">:</span> <span class="s1">&#39;/data/GRScenes-100/home_scenes/scenes/MV7J6NIKTKJZ2AABAAAAADA8_usd/Materials/DayMaterial.mdl&#39;</span> <span class="k">with</span> <span class="n">version</span> <span class="s1">&#39;1&#39;</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">in</span> <span class="s1">&#39;MdlModuleRegistry::ModuleDataMap&#39;</span><span class="o">.</span>
+<span class="p">[</span><span class="n">Error</span><span class="p">]</span> <span class="p">[</span><span class="n">omni</span><span class="o">.</span><span class="n">hydra</span><span class="p">]</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">create</span> <span class="n">MDL</span> <span class="n">shade</span> <span class="n">node</span> <span class="k">for</span> <span class="n">prim</span> <span class="s1">&#39;/Root/Looks/DayMaterial/DayMaterial&#39;</span><span class="o">.</span> <span class="n">Empty</span> <span class="n">identifier</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>        <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">subIdentifier</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>These errors don’t affect the simulations process, but make the scene loading much slower (might cost 15~20 minutes). You can refer to <a class="reference external" href="https://github.com/OpenRobotLab/GRUtopia/issues/30">this issue</a> for more details, and we provide a workaround to speed up the loading process in the issue.</p>
+</li>
+</ul>
+</section>
 </section>
 
 
@@ -422,6 +440,7 @@ GRScenes-100/home_scenes.zip --(unzip)--&gt; home_scenes
 <li><a class="reference internal" href="#overview-of-dataset">Overview of dataset</a></li>
 <li><a class="reference internal" href="#grscenes-100">GRScenes-100</a></li>
 <li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#faq">FAQ</a></li>
 </ul>
 </li>
 </ul>

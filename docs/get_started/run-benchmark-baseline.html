@@ -271,6 +271,11 @@
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:OpenRobotLab/GRUtopia.git
 </pre></div>
 </div>
+<p><strong>Hardware requirements:</strong></p>
+<ol class="arabic simple">
+<li><p>At least 2 RTX-4090 on the same host (or other RTX GPU with equivalent VRAM resource).</p></li>
+<li><p>64GB+ RAM</p></li>
+</ol>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>The system overview when running the benchmark baseline is as follows:</p>
@@ -278,11 +283,6 @@
 <p>The agent runs as a separate process with its own python virtual environment, and currently it communicates with the simulation env process through HTTP localhost.</p>
 <p>If you are running GRUtopia in a container, a separate container is recommended for running the agent, and make sure they are in the same network namespace (that is, the containers can connect to each other through localhost).</p>
 <p>For social-navigation/mobile-manipulation benchmark, both the agent process and simulation env process require 16GB+ VRAM separately. We’ve tested them on a host with 2 RTX 4090 equipped, one for the baseline agent process and one for the simulation env process, and you can take it as a spec reference.</p>
-<p><strong>Hardware requirements:</strong></p>
-<ol class="arabic simple">
-<li><p>At least 2 RTX-4090 on the same host (or other RTX GPU with equivalent VRAM resource).</p></li>
-<li><p>64GB+ RAM</p></li>
-</ol>
 <p>Generally, running benchmark with our agent baseline including the following steps:</p>
 <ol class="arabic simple">
 <li><p>Start the baseline agent process.</p></li>
@@ -299,7 +299,8 @@
 <section id="install-dependencies-for-agent">
 <h4>1.1 Install Dependencies for Agent<a class="headerlink" href="#install-dependencies-for-agent" title="Permalink to this heading">¶</a></h4>
 <p>Create a new conda/venv env (for agent), and then install the dependencies within the env:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># make sure your cuda toolkit version matches your pytorch cuda version</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make sure your CUDA toolkit version matches your pytorch cuda version</span>
+<span class="c1"># CUDA is required, and you should specify CUDA installation path with `export CUDA_HOME=/path/to/cuda`</span>
 <span class="nb">cd</span><span class="w"> </span>grutopia_extension/agents/social_navigation_agent
 pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </pre></div>
@@ -423,7 +424,8 @@ python<span class="w"> </span>GRUtopia/grutopia/demo/h1_social_navigation.py
 <section id="install-environment-dependencies">
 <h4>1.1 Install Environment Dependencies<a class="headerlink" href="#install-environment-dependencies" title="Permalink to this heading">¶</a></h4>
 <p>Create a new conda/venv env (for agent), and then install the dependencies within the env:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># make sure your cuda toolkit version matches your pytorch cuda version</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make sure your CUDA toolkit version matches your pytorch cuda version</span>
+<span class="c1"># CUDA is required, and you should specify CUDA installation path with `export CUDA_HOME=/path/to/cuda`</span>
 <span class="nb">cd</span><span class="w"> </span>grutopia_extension/agents/mobile_manipulation_agent
 pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </pre></div>
@@ -541,6 +543,17 @@ python<span class="w"> </span>GRUtopia/grutopia/demo/mobile_manipulation.py
 <p>Currently, the process and logic of running benchmark baseline is quite rough, and we are continuously working on optimizing it.</p>
 </section>
 </section>
+<section id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p>Following error may occur in GroundingDINO:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="n">_C</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+<p>This is because the GroundingDINO is not properly installed. GroundingDINO depends on CUDA and you should specify the CUDA installation path with <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CUDA_HOME=&lt;your</span> <span class="pre">cuda</span> <span class="pre">path&gt;</span></code> when install GroundingDINO (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>).</p>
+</li>
+</ul>
+</section>
 </section>
 
 
@@ -614,6 +627,7 @@ python<span class="w"> </span>GRUtopia/grutopia/demo/mobile_manipulation.py
 <li><a class="reference internal" href="#id4">3 Run the Episodes in Simulation Env</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#faq">FAQ</a></li>
 </ul>
 </li>
 </ul>

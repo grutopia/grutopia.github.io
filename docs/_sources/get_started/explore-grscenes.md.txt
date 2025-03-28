@@ -99,3 +99,19 @@ Currently, we have provided two types of scene assets for navigation and manipul
 2. Use the raw dataset
 
 The dataset contains raw models and raw scenes. We recommend using [OpenUSD python SDK](https://openusd.org/release/intro.html) to apply physics APIs such as the rigid body and collider to the models. We also provide an example [preprocess](https://github.com/OpenRobotLab/GRUtopia/blob/main/toolkits/grscenes_scripts/preprocess.py) script to learn the detailed workflow of the physics property bindings. Besides, here are some other [tool scripts](https://github.com/OpenRobotLab/GRUtopia/tree/main/toolkits/grscenes_scripts) for GRScenes-100.
+
+
+## FAQ
+
+- Following errors may occur when loading some scenes:
+    ```
+    ...
+
+    [Warning] [rtx.neuraylib.plugin] Loading MdlModule to DB (OmniUsdMdl) failed: ::Materials::DayMaterial
+    [Warning] [rtx.neuraylib.plugin] Loading transaction committed (this thread). MdlModule is NOT in the DB (OmniUsdMdl): ::Materials::DayMaterial
+    [Error] [omni.usd] USD_MDL: in LoadModule at line 247 of ../../source/plugins/usdMdl/neuray.cpp -- 'rtx::neuraylib::MdlModuleId' for '/data/GRScenes-100/home_scenes/scenes/MV7J6NIKTKJZ2AABAAAAADA8_usd/Materials/DayMaterial.mdl' is Invalid
+    [Error] [omni.usd] USD_MDL: in GetSdrFromDiscoveryResult at line 178 of ../../source/plugins/usdMdl/moduleRegistry.cpp -- Module: '/data/GRScenes-100/home_scenes/scenes/MV7J6NIKTKJZ2AABAAAAADA8_usd/Materials/DayMaterial.mdl' with version '1' not found in 'MdlModuleRegistry::ModuleDataMap'.
+    [Error] [omni.hydra] Failed to create MDL shade node for prim '/Root/Looks/DayMaterial/DayMaterial'. Empty identifier: ''        and/or subIdentifier: ''
+    ...
+    ```
+  These errors don't affect the simulations process, but make the scene loading much slower (might cost 15~20 minutes). You can refer to [this issue](https://github.com/OpenRobotLab/GRUtopia/issues/30) for more details, and we provide a workaround to speed up the loading process in the issue.

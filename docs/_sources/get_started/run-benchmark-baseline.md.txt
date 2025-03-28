@@ -6,6 +6,12 @@ NOTE: Benchmark baseline can only be run with the source code of GRUtopia curren
 $ git clone git@github.com:OpenRobotLab/GRUtopia.git
 ```
 
+**Hardware requirements:**
+
+1. At least 2 RTX-4090 on the same host (or other RTX GPU with equivalent VRAM resource).
+2. 64GB+ RAM
+
+
 ## Overview
 
 The system overview when running the benchmark baseline is as follows:
@@ -17,11 +23,6 @@ The agent runs as a separate process with its own python virtual environment, an
 If you are running GRUtopia in a container, a separate container is recommended for running the agent, and make sure they are in the same network namespace (that is, the containers can connect to each other through localhost).
 
 For social-navigation/mobile-manipulation benchmark, both the agent process and simulation env process require 16GB+ VRAM separately. We've tested them on a host with 2 RTX 4090 equipped, one for the baseline agent process and one for the simulation env process, and you can take it as a spec reference.
-
-**Hardware requirements:**
-
-1. At least 2 RTX-4090 on the same host (or other RTX GPU with equivalent VRAM resource).
-2. 64GB+ RAM
 
 Generally, running benchmark with our agent baseline including the following steps:
 
@@ -41,7 +42,8 @@ Generally, running benchmark with our agent baseline including the following ste
 Create a new conda/venv env (for agent), and then install the dependencies within the env:
 
 ```shell
-# make sure your cuda toolkit version matches your pytorch cuda version
+# Make sure your CUDA toolkit version matches your pytorch cuda version
+# CUDA is required, and you should specify CUDA installation path with `export CUDA_HOME=/path/to/cuda`
 cd grutopia_extension/agents/social_navigation_agent
 pip install -r requirements.txt
 ```
@@ -181,7 +183,8 @@ Currently, the process and logic of running benchmark baseline is quite rough, a
 Create a new conda/venv env (for agent), and then install the dependencies within the env:
 
 ```shell
-# make sure your cuda toolkit version matches your pytorch cuda version
+# Make sure your CUDA toolkit version matches your pytorch cuda version
+# CUDA is required, and you should specify CUDA installation path with `export CUDA_HOME=/path/to/cuda`
 cd grutopia_extension/agents/mobile_manipulation_agent
 pip install -r requirements.txt
 ```
@@ -313,3 +316,13 @@ python GRUtopia/grutopia/demo/mobile_manipulation.py
 If the demo episode runs successfully, you can run all the episodes in the benchmark by running all the python scripts generated in step 2. The scripts can also be distributed to different machines and run in parallel as long as the agent process is started on these machines (since currently the two processes can only communicated through localhost...).
 
 Currently, the process and logic of running benchmark baseline is quite rough, and we are continuously working on optimizing it.
+
+## FAQ
+
+- Following error may occur in GroundingDINO:
+
+    ```
+    name _C is not defined
+    ```
+
+  This is because the GroundingDINO is not properly installed. GroundingDINO depends on CUDA and you should specify the CUDA installation path with `export CUDA_HOME=<your cuda path>` when install GroundingDINO (`pip install -r requirements.txt`).

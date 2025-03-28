@@ -20,6 +20,10 @@ $ python rgb_camera_server.py
 
 After running the script, make sure to note the server’s URL. If you're using the sample code and running it locally, the URL (using the loopback address as an example) should be: `http://127.0.0.1:5000/video`.
 
+<video width="960" height="540" controls>
+    <source src="../_static/video/mocap_rgb_camera_server.webm" type="video/webm">
+</video>
+
 > **Note:**
 > The provided code is a reference and may need adjustments based on your specific setup. In the simplest case, you can use your laptop's built-in camera to capture the real-time data.
 
@@ -52,6 +56,10 @@ python -m grutopia.demo.franka_manipulation_mocap_teleop
 
 After the Isaac Sim interface finishes loading, move your right hand in front of the RGB camera (from Step 1), and the Franka arm will follow your hand movements.
 
+<video width="960" height="540" controls>
+    <source src="../_static/video/mocap_start.webm" type="video/webm">
+</video>
+
 ---
 
 ## 2. Operation Logic
@@ -61,6 +69,10 @@ Once the system is up and running, you can use hand gestures to control various 
 ### 2.1 Control the virtual Camera's Third-Person View Rotation
 
 - **Gesture:** Pinch the left thumb and index finger for about 0.5 seconds, then move the fingers in any direction (up/down/left/right/forward/backward) to control the virtual camera's movement (in the Isaac Sim GUI, select the camera `lh_controlled_camera` from the `Camera` menu under `Perspective`).
+
+<video width="960" height="540" controls>
+    <source src="../_static/video/mocap_camera_control.webm" type="video/webm">
+</video>
 
 ### 2.2 Control the Gripper Movement
 
@@ -81,6 +93,10 @@ Once the system is up and running, you can use hand gestures to control various 
 ### 2.4 Gripper Grab and Release
 
 - **Gesture:** Pinch the right thumb and index finger to close the gripper, and release the pinch to open it.
+
+<video width="960" height="540" controls>
+    <source src="../_static/video/mocap_franka_control.webm" type="video/webm">
+</video>
 
 ---
 
