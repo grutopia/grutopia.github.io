@@ -35,13 +35,13 @@ After running the script, make sure to note the server’s URL. If you're using 
 Next, you'll set up the hand gesture recognition system using Hamer. You can find the relevant GitHub repository for Hamer [here](https://github.com/geopavlakos/hamer). After setting up the Hamer environment, place [`GRUtopia/toolkits/mocap/hamer_real_time.py`](https://github.com/OpenRobotLab/GRUtopia/blob/main/toolkits/mocap/hamer_real_time.py) and [`hamer_real_time_server.py`](https://github.com/OpenRobotLab/GRUtopia/blob/main/toolkits/mocap/hamer_real_time_server.py) into the `hamer/` directory. The command to start the server is:
 
 ```bash
-$ python hamer_re.py --video_url {{video_url}}
+$ python hamer_real_time_server.py --video_url {{video_url}}
 ```
 
 The `video_url` parameter should correspond to the URL generated in Step 1. For example, if you're using the URL from Step 1, the command should be:
 
 ```bash
-$ python hamer_re.py --video_url http://127.0.0.1:5000/video
+$ python hamer_real_time_server.py --video_url http://127.0.0.1:5000/video
 ```
 
 Once the server is running successfully, make a note of the Hamer server URL (e.g., `http://127.0.0.1:5001` as shown in the example code).
