@@ -93,7 +93,7 @@ project, put them under the data folder. These weights are essential for running
 
 - MobileSAM: Download mobile_sam.pt from the [MobileSAM GitHub Repository](https://github.com/ChaoningZhang/MobileSAM/blob/master/weights/mobile_sam.pt).
 - GroundingDINO: Download groundingdino_swint_ogc.pth from
-  the [GroundingDINO GitHub Repository](https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha2/groundingdino_swinb_cogcoor.pth).
+  the [GroundingDINO GitHub Repository](https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth).
 - YOLOv7: Download yolov7-e6e.pt from the [YOLOv7 GitHub Repository](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6e.pt).
 
 ```
@@ -233,7 +233,7 @@ project, put them under data folder. These weights are essential for running mod
 
 - MobileSAM: Download mobile_sam.pt from the [MobileSAM GitHub Repository](https://github.com/ChaoningZhang/MobileSAM/blob/master/weights/mobile_sam.pt).
 - GroundingDINO: Download groundingdino_swint_ogc.pth from
-  the [GroundingDINO GitHub Repository](https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha2/groundingdino_swinb_cogcoor.pth).
+  the [GroundingDINO GitHub Repository](https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth).
 - YOLOv7: Download yolov7-e6e.pt from the [YOLOv7 GitHub Repository](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6e.pt).
 
 **NOTE**: Ensure these files are saved in a directory where the code can access them.
