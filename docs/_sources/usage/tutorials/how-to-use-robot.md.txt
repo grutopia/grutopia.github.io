@@ -121,7 +121,7 @@ In the above example, we create a jetbot in the first episode with initial posit
 }
 ```
 
-The obs returned are defined in the `get_obs` method of the robot. For jetbot, you can check it in [`grutopia_extension/configs/robots/jetbot.py`](https://github.com/OpenRobotLab/GRUtopia/blob/main/grutopia_extension/robots/jetbot.py):
+The obs returned are defined in the `get_obs` method of the robot. For jetbot, you can check it in [`grutopia_extension/robots/jetbot.py`](https://github.com/OpenRobotLab/GRUtopia/blob/main/grutopia_extension/robots/jetbot.py):
 
 ```python
 class JetbotRobot(BaseRobot):

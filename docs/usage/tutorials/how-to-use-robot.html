@@ -506,7 +506,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The obs returned are defined in the <code class="docutils literal notranslate"><span class="pre">get_obs</span></code> method of the robot. For jetbot, you can check it in <a class="reference external" href="https://github.com/OpenRobotLab/GRUtopia/blob/main/grutopia_extension/robots/jetbot.py"><code class="docutils literal notranslate"><span class="pre">grutopia_extension/configs/robots/jetbot.py</span></code></a>:</p>
+<p>The obs returned are defined in the <code class="docutils literal notranslate"><span class="pre">get_obs</span></code> method of the robot. For jetbot, you can check it in <a class="reference external" href="https://github.com/OpenRobotLab/GRUtopia/blob/main/grutopia_extension/robots/jetbot.py"><code class="docutils literal notranslate"><span class="pre">grutopia_extension/robots/jetbot.py</span></code></a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">JetbotRobot</span><span class="p">(</span><span class="n">BaseRobot</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_obs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">position</span><span class="p">,</span> <span class="n">orientation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">isaac_robot</span><span class="o">.</span><span class="n">get_world_pose</span><span class="p">()</span>
