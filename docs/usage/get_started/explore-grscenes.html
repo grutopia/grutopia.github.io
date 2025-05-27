@@ -1,0 +1,645 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Explore GRscenes &#8212; GRUtopia v2.1.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/readthedocs.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'usage/get_started/explore-grscenes';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://pydata-sphinx-theme.readthedocs.io/en/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'latest';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../_static/logo192.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Teleoperating with Mocap" href="teleoperating-with-mocap.html" />
+    <link rel="prev" title="Wander with keyboard" href="wander-with-keyboard.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="GRUtopia v2.1.1 documentation - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="GRUtopia v2.1.1 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/OpenRobotLab/GRUtopia.git" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/OpenRobotLab/GRUtopia.git" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Get Started</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wander-with-keyboard.html">Wander with keyboard</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Explore GRscenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teleoperating-with-mocap.html">Teleoperating with Mocap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teleoperating-with-visionpro.html">Teleoperating with VisionPro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layout_edit_with_mocap.html">Layout Edit with Mocap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run-benchmark-baseline.html">Run Benchmark Baseline</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/core-concepts.html">Core Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/how-to-use-task.html">How to Use Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/how-to-use-robot.html">How to Use Robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/how-to-use-controller.html">How to Use Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/how-to-use-sensor.html">How to Use Sensor</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced_tutorials/index.html">Advanced Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_tutorials/how-to-add-robot.html">How to Add Custom Robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_tutorials/how-to-add-controller.html">How to Add Custom Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_tutorials/how-to-add-sensor.html">How to Add Custom Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_tutorials/how-to-add-task.html">How to Add Custom Task</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Usage</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Get Started</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Explore GRscenes</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="explore-grscenes">
+<h1>Explore GRscenes<a class="headerlink" href="#explore-grscenes" title="Permalink to this heading">#</a></h1>
+<section id="download">
+<h2>Download<a class="headerlink" href="#download" title="Permalink to this heading">#</a></h2>
+<p>You can refer to the chapter <a class="reference internal" href="installation.html#prepare-assets"><span class="std std-ref">Prepare Assets</span></a> in the installation doc to download the GRscenes.</p>
+</section>
+<section id="overview-of-dataset">
+<h2>Overview of dataset<a class="headerlink" href="#overview-of-dataset" title="Permalink to this heading">#</a></h2>
+<p>The directory structure of dataset is as following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GRScenes
+├── benchmark
+│   ├── meta.zip
+│   ├── object_captions_embeddings.pkl
+│   └── ...
+├── metafile.yaml
+├── objects
+│   ├── table
+│   └── ...
+├── README.md
+├── robots
+│   ├── aliengo/
+│   ├── franka/
+│   ├── g1/
+│   ├── gr1/
+│   ├── h1/
+│   └── ...
+└── scenes
+    ├── empty.usd
+    ├── demo_scenes/
+    └── GRScenes-100/
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>benchmark: some metadata files required for running benchmark baselines.</p></li>
+<li><p>objects: USD files of standalone objects.</p></li>
+<li><p>robots: USD files of robots and model weights for controllers.</p></li>
+<li><p>scenes:</p>
+<ul>
+<li><p>empty.usd: a minimum scene with ground plane.</p></li>
+<li><p>demo_scenes: a directory containing scenes for demo scripts.</p></li>
+<li><p>GRScenes-100: a directory containing nearly 100 high-quality scenes, covering home and commercial scenes. You can refer to <a class="reference internal" href="#grscenes-100"><span class="xref myst">GRScenes-100</span></a> chapter for detailed information.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="grscenes-100">
+<h2>GRScenes-100<a class="headerlink" href="#grscenes-100" title="Permalink to this heading">#</a></h2>
+<p>Directory structure of GRScenes-100 is as following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GRScenes-100/commercial_scenes.zip --(unzip)--&gt; commercial_scenes
+└── ...
+GRScenes-100/home_scenes.zip --(unzip)--&gt; home_scenes
+├── Materials
+│   └── ... (material mdl files and texture pictures)
+├── models
+│   ├── layout
+│   │   ├── articulated
+│   │   │   └── ... ( window, door, etc.)
+│   │   └── others
+│   │       └── ... (ceiling, wall, ground, etc.)
+│   └── object
+│       ├── articulated
+│       │   └── ... (microwave, refrigerator, etc.)
+│       └── others
+│           └── ... (bed, bottle, cup, etc.)
+└── scenes
+    ├── MV7J6NIKTKJZ2AABAAAAADA8_usd
+    │   ├── Materials -&gt; ../../Materials
+    │   ├── models    -&gt; ../../models
+    │   ├── metadata.json (records the referenced model and material paths)
+    │   └── start_result_xxx.usd (scene usd files)
+    └── ... (other scene folders)
+</pre></div>
+</div>
+<ul>
+<li><p><strong>Materials</strong> folder contains mdl files and texture pictures. The mdl files, which are Material Definition Language files commonly used by rendering engines such as NVIDIA Omniverse. These mdl files are used with texture pictures to define the physically based material properties such as color, reflectivity, and transparency that can be applied to 3D objects.</p></li>
+<li><p><strong>models</strong> folder contains 3D object models, where layouts objects under <code class="docutils literal notranslate"><span class="pre">layout/</span></code> and interactive objects under <code class="docutils literal notranslate"><span class="pre">object/</span></code>. Subdirectories are further categorized according to the model semantic labels such as <code class="docutils literal notranslate"><span class="pre">door</span></code> and <code class="docutils literal notranslate"><span class="pre">oven</span></code>.</p></li>
+<li><p><strong>scenes</strong> folder (e.g., <code class="docutils literal notranslate"><span class="pre">MV7J6NIKTKJZ2AABAAAAADA8_usd/</span></code>) contains the following files:</p>
+<ul>
+<li><p><strong>Scene USD Files</strong></p>
+<p>We provides three usd files.</p>
+<ul class="simple">
+<li><p><strong>raw scene</strong>, named as <code class="docutils literal notranslate"><span class="pre">start_result_raw.usd</span></code>, which defines the layout of the scene.</p></li>
+<li><p><strong>navigation scene</strong>, named as <code class="docutils literal notranslate"><span class="pre">start_result_navigation.usd</span></code>, which used for navigation tasks.</p></li>
+<li><p><strong>interaction scene</strong>, named as <code class="docutils literal notranslate"><span class="pre">start_result_interaction.usd</span></code>, which used for manipulation tasks.</p></li>
+</ul>
+</li>
+<li><p><strong>metadata.json</strong></p>
+<p>This file records the metadata information of the models and materials referenced in the raw scene.</p>
+</li>
+<li><p><strong>interactive_obj_list.json</strong></p>
+<p>This file records the prim paths of the interactive objects in the interaction scene.</p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Use the scene asset for your custom task</p></li>
+</ol>
+<p>Currently, we have provided two types of scene assets for navigation and manipulation tasks respectively. Users can get these scene assets from the GRScenes dataset, the scene asset path is typically like <code class="docutils literal notranslate"><span class="pre">.../GRScenes-100/home_scenes/scenes/{scene_id}/start_result_xxx.usd</span></code>. Please refer to the <a class="reference external" href="https://github.com/OpenRobotLab/GRUtopia/tree/main/grutopia/demo">examples</a> to learn how to specify scene through <code class="docutils literal notranslate"><span class="pre">scene_asset_path</span></code> field in config.</p>
+<ol class="arabic simple" start="2">
+<li><p>Use the raw dataset</p></li>
+</ol>
+<p>The dataset contains raw models and raw scenes. We recommend using <a class="reference external" href="https://openusd.org/release/intro.html">OpenUSD python SDK</a> to apply physics APIs such as the rigid body and collider to the models. We also provide an example <a class="reference external" href="https://github.com/OpenRobotLab/GRUtopia/blob/main/toolkits/grscenes_scripts/preprocess.py">preprocess</a> script to learn the detailed workflow of the physics property bindings. Besides, here are some other <a class="reference external" href="https://github.com/OpenRobotLab/GRUtopia/tree/main/toolkits/grscenes_scripts">tool scripts</a> for GRScenes-100.</p>
+</section>
+<section id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this heading">#</a></h2>
+<ul>
+<li><p>Following errors may occur when loading some scenes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+<span class="p">[</span><span class="ne">Warning</span><span class="p">]</span> <span class="p">[</span><span class="n">rtx</span><span class="o">.</span><span class="n">neuraylib</span><span class="o">.</span><span class="n">plugin</span><span class="p">]</span> <span class="n">Loading</span> <span class="n">MdlModule</span> <span class="n">to</span> <span class="n">DB</span> <span class="p">(</span><span class="n">OmniUsdMdl</span><span class="p">)</span> <span class="n">failed</span><span class="p">:</span> <span class="p">::</span><span class="n">Materials</span><span class="p">::</span><span class="n">DayMaterial</span>
+<span class="p">[</span><span class="ne">Warning</span><span class="p">]</span> <span class="p">[</span><span class="n">rtx</span><span class="o">.</span><span class="n">neuraylib</span><span class="o">.</span><span class="n">plugin</span><span class="p">]</span> <span class="n">Loading</span> <span class="n">transaction</span> <span class="n">committed</span> <span class="p">(</span><span class="n">this</span> <span class="n">thread</span><span class="p">)</span><span class="o">.</span> <span class="n">MdlModule</span> <span class="ow">is</span> <span class="n">NOT</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">DB</span> <span class="p">(</span><span class="n">OmniUsdMdl</span><span class="p">):</span> <span class="p">::</span><span class="n">Materials</span><span class="p">::</span><span class="n">DayMaterial</span>
+<span class="p">[</span><span class="n">Error</span><span class="p">]</span> <span class="p">[</span><span class="n">omni</span><span class="o">.</span><span class="n">usd</span><span class="p">]</span> <span class="n">USD_MDL</span><span class="p">:</span> <span class="ow">in</span> <span class="n">LoadModule</span> <span class="n">at</span> <span class="n">line</span> <span class="mi">247</span> <span class="n">of</span> <span class="o">../../</span><span class="n">source</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">usdMdl</span><span class="o">/</span><span class="n">neuray</span><span class="o">.</span><span class="n">cpp</span> <span class="o">--</span> <span class="s1">&#39;rtx::neuraylib::MdlModuleId&#39;</span> <span class="k">for</span> <span class="s1">&#39;/data/GRScenes-100/home_scenes/scenes/MV7J6NIKTKJZ2AABAAAAADA8_usd/Materials/DayMaterial.mdl&#39;</span> <span class="ow">is</span> <span class="n">Invalid</span>
+<span class="p">[</span><span class="n">Error</span><span class="p">]</span> <span class="p">[</span><span class="n">omni</span><span class="o">.</span><span class="n">usd</span><span class="p">]</span> <span class="n">USD_MDL</span><span class="p">:</span> <span class="ow">in</span> <span class="n">GetSdrFromDiscoveryResult</span> <span class="n">at</span> <span class="n">line</span> <span class="mi">178</span> <span class="n">of</span> <span class="o">../../</span><span class="n">source</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">usdMdl</span><span class="o">/</span><span class="n">moduleRegistry</span><span class="o">.</span><span class="n">cpp</span> <span class="o">--</span> <span class="n">Module</span><span class="p">:</span> <span class="s1">&#39;/data/GRScenes-100/home_scenes/scenes/MV7J6NIKTKJZ2AABAAAAADA8_usd/Materials/DayMaterial.mdl&#39;</span> <span class="k">with</span> <span class="n">version</span> <span class="s1">&#39;1&#39;</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">in</span> <span class="s1">&#39;MdlModuleRegistry::ModuleDataMap&#39;</span><span class="o">.</span>
+<span class="p">[</span><span class="n">Error</span><span class="p">]</span> <span class="p">[</span><span class="n">omni</span><span class="o">.</span><span class="n">hydra</span><span class="p">]</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">create</span> <span class="n">MDL</span> <span class="n">shade</span> <span class="n">node</span> <span class="k">for</span> <span class="n">prim</span> <span class="s1">&#39;/Root/Looks/DayMaterial/DayMaterial&#39;</span><span class="o">.</span> <span class="n">Empty</span> <span class="n">identifier</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>        <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">subIdentifier</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>These errors don’t affect the simulations process, but make the scene loading much slower (might cost 15~20 minutes). You can refer to <a class="reference external" href="https://github.com/OpenRobotLab/GRUtopia/issues/30">this issue</a> for more details, and we provide a workaround to speed up the loading process in the issue.</p>
+</li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="wander-with-keyboard.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Wander with keyboard</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="teleoperating-with-mocap.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Teleoperating with Mocap</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download">Download</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-dataset">Overview of dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grscenes-100">GRScenes-100</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/usage/get_started/explore-grscenes.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, OpenRobotLab.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

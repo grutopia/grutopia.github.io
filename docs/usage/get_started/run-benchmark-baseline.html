@@ -1,0 +1,834 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Run Benchmark Baseline &#8212; GRUtopia v2.1.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/readthedocs.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'usage/get_started/run-benchmark-baseline';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://pydata-sphinx-theme.readthedocs.io/en/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'latest';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../_static/logo192.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tutorials" href="../tutorials/index.html" />
+    <link rel="prev" title="Layout Edit with Mocap" href="layout_edit_with_mocap.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="GRUtopia v2.1.1 documentation - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="GRUtopia v2.1.1 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/OpenRobotLab/GRUtopia.git" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/OpenRobotLab/GRUtopia.git" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Get Started</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wander-with-keyboard.html">Wander with keyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore-grscenes.html">Explore GRscenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teleoperating-with-mocap.html">Teleoperating with Mocap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teleoperating-with-visionpro.html">Teleoperating with VisionPro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layout_edit_with_mocap.html">Layout Edit with Mocap</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Run Benchmark Baseline</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/core-concepts.html">Core Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/how-to-use-task.html">How to Use Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/how-to-use-robot.html">How to Use Robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/how-to-use-controller.html">How to Use Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/how-to-use-sensor.html">How to Use Sensor</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced_tutorials/index.html">Advanced Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_tutorials/how-to-add-robot.html">How to Add Custom Robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_tutorials/how-to-add-controller.html">How to Add Custom Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_tutorials/how-to-add-sensor.html">How to Add Custom Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_tutorials/how-to-add-task.html">How to Add Custom Task</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Usage</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Get Started</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Run Benchmark Baseline</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="run-benchmark-baseline">
+<h1>Run Benchmark Baseline<a class="headerlink" href="#run-benchmark-baseline" title="Permalink to this heading">#</a></h1>
+<p>NOTE: Benchmark baseline can only be run with the source code of GRUtopia currently. If GRUtopia is installed through pip, you must clone the repository of GRUtopia first.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:OpenRobotLab/GRUtopia.git
+</pre></div>
+</div>
+<p><strong>Hardware requirements:</strong></p>
+<ol class="arabic simple">
+<li><p>At least 2 RTX-4090 on the same host (or other RTX GPU with equivalent VRAM resource).</p></li>
+<li><p>64GB+ RAM</p></li>
+</ol>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>The system overview when running the benchmark baseline is as follows:</p>
+<img src="../../_static/image/agent_baseline.png" width="400">
+<p>The agent runs as a separate process with its own python virtual environment, and currently it communicates with the simulation env process through HTTP localhost.</p>
+<p>If you are running GRUtopia in a container, a separate container is recommended for running the agent, and make sure they are in the same network namespace (that is, the containers can connect to each other through localhost).</p>
+<p>For social-navigation/mobile-manipulation benchmark, both the agent process and simulation env process require 16GB+ VRAM separately. We’ve tested them on a host with 2 RTX 4090 equipped, one for the baseline agent process and one for the simulation env process, and you can take it as a spec reference.</p>
+<p>Generally, running benchmark with our agent baseline including the following steps:</p>
+<ol class="arabic simple">
+<li><p>Start the baseline agent process.</p></li>
+<li><p>Generate config for all episodes.</p></li>
+<li><p>Run all episodes in simulation.</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>NOTE</strong>: Agents implementations are currently in the directory <a class="reference external" href="https://github.com/OpenRobotLab/GRUtopia/tree/main/grutopia_extension/agents"><code class="docutils literal notranslate"><span class="pre">GRUtopia/grutopia_extension/agents/</span></code></a>. They may be migrated to a separate repo in the future.</p>
+</section>
+<section id="social-navigation">
+<h2>Social Navigation<a class="headerlink" href="#social-navigation" title="Permalink to this heading">#</a></h2>
+<section id="start-baseline-agent-for-social-navigation-benchmark">
+<h3>1 Start Baseline Agent For Social Navigation Benchmark<a class="headerlink" href="#start-baseline-agent-for-social-navigation-benchmark" title="Permalink to this heading">#</a></h3>
+<section id="install-dependencies-for-agent">
+<h4>1.1 Install Dependencies for Agent<a class="headerlink" href="#install-dependencies-for-agent" title="Permalink to this heading">#</a></h4>
+<p>Create a new conda/venv env (for agent), and then install the dependencies within the env:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make sure your CUDA toolkit version matches your pytorch cuda version</span>
+<span class="c1"># CUDA is required, and you should specify CUDA installation path</span>
+<span class="c1"># with `export CUDA_HOME=/path/to/cuda`</span>
+<span class="nb">cd</span><span class="w"> </span>grutopia_extension/agents/social_navigation_agent
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>Tmux is required for running the agent entrypoint script. You can install it by:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>tmux
+</pre></div>
+</div>
+</section>
+<section id="install-submodules">
+<h4>1.2 Install Submodules<a class="headerlink" href="#install-submodules" title="Permalink to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># PWD: grutopia_extension/agents/social_navigation_agent</span>
+mkdir<span class="w"> </span>images
+<span class="c1"># Please make sure your torch cuda version is equal with your cuda version</span>
+<span class="c1"># GroundingDINO</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/IDEA-Research/GroundingDINO.git
+
+<span class="c1"># YOLOv7</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/WongKinYiu/yolov7.git
+</pre></div>
+</div>
+<p>The directory structure of the submodules is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>grutopia_extension
+├── agents
+│   ├── social_navigation_agent
+│   │   ├── GroundingDINO                            # GroundingDINO repo
+│   │   ├── images                                   # Empty directory
+│   │   └── yolov7                                   # yolov7 repo
+</pre></div>
+</div>
+</section>
+<section id="download-model-weights">
+<h4>1.3 Download Model Weights<a class="headerlink" href="#download-model-weights" title="Permalink to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># PWD: grutopia_extension/agents/social_navigation_agent</span>
+mkdir<span class="w"> </span>data
+<span class="nb">cd</span><span class="w"> </span>data
+</pre></div>
+</div>
+<p>Download the necessary model weights from the provided sources and place them in an accessible directory within the
+project, put them under the data folder. These weights are essential for running the models.</p>
+<ul class="simple">
+<li><p>MobileSAM: Download mobile_sam.pt from the <a class="reference external" href="https://github.com/ChaoningZhang/MobileSAM/blob/master/weights/mobile_sam.pt">MobileSAM GitHub Repository</a>.</p></li>
+<li><p>GroundingDINO: Download groundingdino_swint_ogc.pth from
+the <a class="reference external" href="https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth">GroundingDINO GitHub Repository</a>.</p></li>
+<li><p>YOLOv7: Download yolov7-e6e.pt from the <a class="reference external" href="https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6e.pt">YOLOv7 GitHub Repository</a>.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>grutopia_extension
+├── agents
+│   ├── social_navigation_agent
+│   │   ├── data
+│   │   │   ├── groundingdino_swint_ogc.pth
+│   │   │   ├── mobile_sam.pt
+│   │   │   └── yolov7-e6e.pt
+</pre></div>
+</div>
+</section>
+<section id="configure-api-keys">
+<h4>1.4 Configure API Keys<a class="headerlink" href="#configure-api-keys" title="Permalink to this heading">#</a></h4>
+<p>Put your API keys under <code class="docutils literal notranslate"><span class="pre">./modules/vlm/api_key</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>grutopia_extension
+├── agents
+│   ├── social_navigation_agent
+│   │   ├── modules
+│   │   │   └── vlm
+│   │   │   │   └── api_key
+│   │   │   │   │   ├── azure_api_key.txt
+│   │   │   │   │   └── azure_api_key_e.txt
+</pre></div>
+</div>
+<p>As mentioned above:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">azure_api_key.txt</span></code>: The API key for the Azure OpenAI <code class="docutils literal notranslate"><span class="pre">gpt-4o</span></code> model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">azure_api_key_e.txt</span></code>: The API key for the Azure OpenAI <code class="docutils literal notranslate"><span class="pre">text-embedding-3-large</span></code> embedding model.</p></li>
+</ul>
+<p>You can learn how to get the keys through this <a class="reference external" href="https://learn.microsoft.com/zh-cn/azure/ai-services/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions">link</a>.</p>
+</section>
+<section id="run-the-agent-process">
+<h4>1.5 Run the Agent Process<a class="headerlink" href="#run-the-agent-process" title="Permalink to this heading">#</a></h4>
+<p>Launch the agent process</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># PWD: grutopia_extension/agents/social_navigation_agent</span>
+./scripts/launch_vlm_servers.sh
+</pre></div>
+</div>
+</section>
+</section>
+<section id="generate-episodes-config-for-social-navigation-task">
+<h3>2. Generate episodes config for social navigation task<a class="headerlink" href="#generate-episodes-config-for-social-navigation-task" title="Permalink to this heading">#</a></h3>
+<p>A python script <a class="reference external" href="https://github.com/OpenRobotLab/GRUtopia/blob/main/grutopia_extension/agents/social_navigation_agent/generate_sn_episodes.py"><code class="docutils literal notranslate"><span class="pre">generate_sn_episodes.py</span></code></a> is provided to generate episodes config for social navigation task. Currently it generates a python entrypoint file for each episode, since our env does not fully support multiple episodes yet. For example, if there’s 30 episodes to run for the benchmark, 30 python scripts will be generated, and each python script contains the full process to run one episode in simulation Env.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate episodes config for social navigation task</span>
+<span class="nb">cd</span><span class="w"> </span>PATH/TO/GRUTOPIA/ROOT
+<span class="nb">cd</span><span class="w"> </span>..
+python<span class="w"> </span>GRUtopia/grutopia_extension/agents/social_navigation_agent/generate_sn_episodes.py<span class="w"> </span>--help<span class="w">  </span><span class="c1"># See options when generating episodes config</span>
+python<span class="w"> </span>GRUtopia/grutopia_extension/agents/social_navigation_agent/generate_sn_episodes.py
+</pre></div>
+</div>
+<p>If no options are provided, the generated scripts will be saved in <code class="docutils literal notranslate"><span class="pre">./sn_episodes</span></code>. You can override the path when generating (see <code class="docutils literal notranslate"><span class="pre">--help</span></code>).</p>
+</section>
+<section id="run-the-episodes-in-simulation-env">
+<h3>3 Run the Episodes in Simulation Env<a class="headerlink" href="#run-the-episodes-in-simulation-env" title="Permalink to this heading">#</a></h3>
+<p>Open a new session and switch to the python virtual environment for simulation env, which is the one you created when <a class="reference internal" href="installation.html"><span class="std std-doc">install GRUtopia</span></a>.</p>
+<p>First install the dependencies required for running the benchmark:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>PATH/TO/GRUTOPIA/ROOT
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements/benchmark.txt
+</pre></div>
+</div>
+<p>It may take quite a long time to run all the episodes. You can verify the setting by running the demo episode first:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>PATH/TO/GRUTOPIA/ROOT
+<span class="nb">cd</span><span class="w"> </span>..
+python<span class="w"> </span>GRUtopia/grutopia/demo/h1_social_navigation.py
+</pre></div>
+</div>
+<p>If the demo episode runs successfully, you can run all the episodes in the benchmark by running all the python scripts generated in step 2. The scripts can also be distributed to different machines and run in parallel as long as the agent process is started on these machines (since currently the two processes can only communicated through localhost…).</p>
+<p>Currently, the process and logic of running benchmark baseline is quite rough, and we are continuously working on optimizing it.</p>
+</section>
+</section>
+<section id="mobile-manipulation">
+<h2>Mobile Manipulation<a class="headerlink" href="#mobile-manipulation" title="Permalink to this heading">#</a></h2>
+<section id="start-baseline-agent-for-mobile-manipulation-benchmark">
+<h3>1 Start Baseline Agent For Mobile Manipulation Benchmark<a class="headerlink" href="#start-baseline-agent-for-mobile-manipulation-benchmark" title="Permalink to this heading">#</a></h3>
+<section id="install-environment-dependencies">
+<h4>1.1 Install Environment Dependencies<a class="headerlink" href="#install-environment-dependencies" title="Permalink to this heading">#</a></h4>
+<p>Create a new conda/venv env (for agent), and then install the dependencies within the env:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make sure your CUDA toolkit version matches your pytorch cuda version</span>
+<span class="c1"># CUDA is required, and you should specify CUDA installation path</span>
+<span class="c1"># with `export CUDA_HOME=/path/to/cuda`</span>
+<span class="nb">cd</span><span class="w"> </span>grutopia_extension/agents/mobile_manipulation_agent
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>Tmux is required for running the agent entrypoint script. You can install it by:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>tmux
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h4>1.2 Install Submodules<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># PWD: grutopia_extension/agents/mobile_manipulation_agent</span>
+mkdir<span class="w"> </span>images
+<span class="c1"># Please make sure your torch cuda version is equal with your cuda version</span>
+<span class="c1"># GroundingDINO</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/IDEA-Research/GroundingDINO.git
+
+<span class="c1"># YOLOv7</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/WongKinYiu/yolov7.git
+</pre></div>
+</div>
+<p>The directory structure of the submodules are as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>grutopia_extension
+├── agents
+│   ├── mobile_manipulation_agent
+│   │   ├── GroundingDINO                            # GroundingDINO repo
+│   │   ├── images                                   # Empty directory
+│   │   └── yolov7                                   # yolov7 repo
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h4>1.3 Download Model Weights<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># PWD: grutopia_extension/agents/mobile_manipulation_agent</span>
+mkdir<span class="w"> </span>data
+<span class="nb">cd</span><span class="w"> </span>data
+</pre></div>
+</div>
+<p>Download the necessary model weights from the provided sources and place them in an accessible directory within the
+project, put them under data folder. These weights are essential for running models.</p>
+<ul class="simple">
+<li><p>MobileSAM: Download mobile_sam.pt from the <a class="reference external" href="https://github.com/ChaoningZhang/MobileSAM/blob/master/weights/mobile_sam.pt">MobileSAM GitHub Repository</a>.</p></li>
+<li><p>GroundingDINO: Download groundingdino_swint_ogc.pth from
+the <a class="reference external" href="https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth">GroundingDINO GitHub Repository</a>.</p></li>
+<li><p>YOLOv7: Download yolov7-e6e.pt from the <a class="reference external" href="https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6e.pt">YOLOv7 GitHub Repository</a>.</p></li>
+</ul>
+<p><strong>NOTE</strong>: Ensure these files are saved in a directory where the code can access them.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>grutopia_extension
+├── agents
+│   ├── mobile_manipulation_agent
+│   │   ├── data
+│   │   │   ├── groundingdino_swint_ogc.pth
+│   │   │   ├── mobile_sam.pt
+│   │   │   └── yolov7-e6e.pt
+</pre></div>
+</div>
+</section>
+<section id="configure-api-key">
+<h4>1.4 Configure API Key<a class="headerlink" href="#configure-api-key" title="Permalink to this heading">#</a></h4>
+<p>Put your api key under <code class="docutils literal notranslate"><span class="pre">./modules/vlm/api_key</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>grutopia_extension
+├── agents
+│   ├── mobile_manipulation_agent
+│   │   ├── modules
+│   │   │   └── vlm
+│   │   │   │   └── api_key
+│   │   │   │   │   ├── azure_api_key.txt
+│   │   │   │   │   └── azure_api_key_e.txt
+</pre></div>
+</div>
+<p>As mentioned above:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">azure_api_key.txt</span></code>: The API key for the Azure OpenAI <code class="docutils literal notranslate"><span class="pre">gpt-4o</span></code> model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">azure_api_key_e.txt</span></code>: The API key for the Azure OpenAI <code class="docutils literal notranslate"><span class="pre">text-embedding-3-large</span></code> embedding model.</p></li>
+</ul>
+<p>You can learn how to get the keys through this <a class="reference external" href="https://learn.microsoft.com/zh-cn/azure/ai-services/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions">link</a>.</p>
+</section>
+<section id="id3">
+<h4>1.5 Run the Agent Process<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<p>Launch the agent process</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># PWD: grutopia_extension/agents/mobile_manipulation_agent</span>
+./scripts/launch_vlm_servers.sh
+</pre></div>
+</div>
+</section>
+</section>
+<section id="generate-episodes-config-for-mobile-manipulation-task">
+<h3>2 Generate episodes config for mobile manipulation task<a class="headerlink" href="#generate-episodes-config-for-mobile-manipulation-task" title="Permalink to this heading">#</a></h3>
+<p>A python script <a class="reference external" href="https://github.com/OpenRobotLab/GRUtopia/blob/main/grutopia_extension/agents/mobile_manipulation_agent/generate_mm_episodes.py"><code class="docutils literal notranslate"><span class="pre">generate_mm_episodes.py</span></code></a> is provided to generate episodes config for mobile manipulation task. Currently it generates a python entrypoint file for each episode, since our env does not fully support multiple episodes yet. For example, if there’s 30 episodes to run for the benchmark, 30 python scripts will be generated, and each python script contains the full process to run one episode in simulation Env.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate episodes config for mobile manipulation task</span>
+<span class="nb">cd</span><span class="w"> </span>PATH/TO/GRUTOPIA/ROOT
+<span class="nb">cd</span><span class="w"> </span>..
+python<span class="w"> </span>GRUtopia/grutopia_extension/agents/mobile_manipulation_agent/generate_mm_episodes.py<span class="w"> </span>--help<span class="w">  </span><span class="c1"># See options when generating episodes config</span>
+python<span class="w"> </span>GRUtopia/grutopia_extension/agents/mobile_manipulation_agent/generate_mm_episodes.py
+</pre></div>
+</div>
+<p>If no options are provided, the generated scripts will be saved in <code class="docutils literal notranslate"><span class="pre">./mm_episodes</span></code>. You can override the path when generating (see <code class="docutils literal notranslate"><span class="pre">--help</span></code>).</p>
+</section>
+<section id="id4">
+<h3>3 Run the Episodes in Simulation Env<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>Open a new session and switch to the python virtual environment for simulation env, which is the one you created when <a class="reference internal" href="installation.html"><span class="std std-doc">install GRUtopia</span></a>.</p>
+<p>First install the dependencies required for running the benchmark:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>PATH/TO/GRUTOPIA/ROOT
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements/benchmark.txt
+</pre></div>
+</div>
+<p>It may take quite a long time to run all the episodes. You can verify the setting by running the demo episode first:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>PATH/TO/GRUTOPIA/ROOT
+<span class="nb">cd</span><span class="w"> </span>..
+python<span class="w"> </span>GRUtopia/grutopia/demo/mobile_manipulation.py
+</pre></div>
+</div>
+<p>If the demo episode runs successfully, you can run all the episodes in the benchmark by running all the python scripts generated in step 2. The scripts can also be distributed to different machines and run in parallel as long as the agent process is started on these machines (since currently the two processes can only communicated through localhost…).</p>
+<p>Currently, the process and logic of running benchmark baseline is quite rough, and we are continuously working on optimizing it.</p>
+</section>
+</section>
+<section id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this heading">#</a></h2>
+<ul>
+<li><p>Following error may occur in GroundingDINO:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="n">_C</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+<p>This is because the GroundingDINO is not properly installed. GroundingDINO depends on CUDA and you should specify the CUDA installation path with <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CUDA_HOME=&lt;your</span> <span class="pre">cuda</span> <span class="pre">path&gt;</span></code> when install GroundingDINO (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>).</p>
+</li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="layout_edit_with_mocap.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Layout Edit with Mocap</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../tutorials/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#social-navigation">Social Navigation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-baseline-agent-for-social-navigation-benchmark">1 Start Baseline Agent For Social Navigation Benchmark</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-for-agent">1.1 Install Dependencies for Agent</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-submodules">1.2 Install Submodules</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#download-model-weights">1.3 Download Model Weights</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-api-keys">1.4 Configure API Keys</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-agent-process">1.5 Run the Agent Process</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-episodes-config-for-social-navigation-task">2. Generate episodes config for social navigation task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-episodes-in-simulation-env">3 Run the Episodes in Simulation Env</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mobile-manipulation">Mobile Manipulation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-baseline-agent-for-mobile-manipulation-benchmark">1 Start Baseline Agent For Mobile Manipulation Benchmark</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-environment-dependencies">1.1 Install Environment Dependencies</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.2 Install Submodules</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.3 Download Model Weights</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-api-key">1.4 Configure API Key</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.5 Run the Agent Process</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-episodes-config-for-mobile-manipulation-task">2 Generate episodes config for mobile manipulation task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3 Run the Episodes in Simulation Env</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/usage/get_started/run-benchmark-baseline.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, OpenRobotLab.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
